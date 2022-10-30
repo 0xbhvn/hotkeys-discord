@@ -2,7 +2,8 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-#IfWinActive Discord
+#IfWinActive ahk_class Discord
 ^r::
-Send, 'Rugpull'
+Send, Rugpull
+Send, Enter
 return
