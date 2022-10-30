@@ -2,8 +2,12 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-#IfWinActive ahk_class Discord
-^r::
-Send, Rugpull
-Send, Enter
-return
+WinGetActiveTitle, Window_name
+Win_Discord := "Discord"
+Found_Discord := InStr( Window_name, Win_Discord, false )
+if !(Found_Discord >= 1)
+{
+    ^r::
+    Send, Rugpull{Enter}
+    return
+}
